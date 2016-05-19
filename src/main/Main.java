@@ -1,15 +1,15 @@
 package main;
 
-import cta.api.enums.Parameter;
-import cta.api.TrackerCommunicator;
-import cta.api.TrackerQueryBuilder;
+import cta.api.enums.APIQueryParameter;
+import cta.api.APICommunicator;
+import cta.api.APIQueryBuilder;
 
 public class Main {
 
 	public static void main(String[] args) {
-		TrackerQueryBuilder b = new TrackerQueryBuilder("");
-		b.addParameter(Parameter.STATION_ID, "");
-		String r = TrackerCommunicator.sendGet(b);
+		APIQueryBuilder b = new APIQueryBuilder("");
+		b.addParameter(APIQueryParameter.STATION_ID, "");
+		String r = APICommunicator.sendGet(b);
 		System.out.println(r);
 	}
 

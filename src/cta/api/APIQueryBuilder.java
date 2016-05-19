@@ -2,9 +2,9 @@ package cta.api;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
-import cta.api.enums.Parameter;
+import cta.api.enums.APIQueryParameter;
 
-public class TrackerQueryBuilder {
+public class APIQueryBuilder {
 	private final HashMap<String,String> queryParams;
 	private String query;
 	/**
@@ -17,17 +17,17 @@ public class TrackerQueryBuilder {
 	 * @author George
 	 */
 	
-	public TrackerQueryBuilder(String apiKey) {
+	public APIQueryBuilder(String apiKey) {
 		this.queryParams = new HashMap<String,String>();
 		this.queryParams.put("key", apiKey);
 		this.query = "";
 	}
 	
-	public void addParameter(Parameter p, String v) {
+	public void addParameter(APIQueryParameter p, String v) {
 		queryParams.put(p.urlParameterString, v);
 	}
 	
-	public void removeParameter(Parameter p) {
+	public void removeParameter(APIQueryParameter p) {
 		queryParams.remove(p.urlParameterString);
 	}
 	

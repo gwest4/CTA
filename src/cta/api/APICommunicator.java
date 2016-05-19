@@ -9,11 +9,11 @@ import java.util.Map.Entry;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
-public class TrackerCommunicator {
+public class APICommunicator {
 	private final static String ARRIVALS_BASE_URL = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx";
 	private final static String USER_AGENT = "Mozilla/5.0";
 
-	public static String sendGet(TrackerQueryBuilder b) {
+	public static String sendGet(APIQueryBuilder b) {
 		//HttpURLConnection connection = null;
 		try {
 			URL obj = new URL(ARRIVALS_BASE_URL + b.toQueryString());
