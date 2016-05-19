@@ -1,3 +1,14 @@
+# =========================
+# This project
+# =========================
+
+# Compiled Java
+*.class
+
+# =========================
+# Auto-generated - Windows
+# =========================
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

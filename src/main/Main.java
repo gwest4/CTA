@@ -1,12 +1,16 @@
 package main;
 
-import cta.TrackerCommunicator;
+import cta.api.enums.Parameter;
+import cta.api.TrackerCommunicator;
+import cta.api.TrackerQueryBuilder;
 
 public class Main {
 
 	public static void main(String[] args) {
-		String response = TrackerCommunicator.sendQueryWithArgs(null);
-		System.out.println(response);
+		TrackerQueryBuilder b = new TrackerQueryBuilder("");
+		b.addParameter(Parameter.STATION_ID, "");
+		String r = TrackerCommunicator.sendGet(b);
+		System.out.println(r);
 	}
 
 }
