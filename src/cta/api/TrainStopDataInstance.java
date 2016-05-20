@@ -1,9 +1,7 @@
 package cta.api;
 import java.util.ArrayList;
 
-import utils.TrainStop;
-import utils.TrainStop.TrainLine;
-import utils.TrainStopDataParser;
+import cta.api.enums.TrainRoute;
 
 public class TrainStopDataInstance {
 	// singleton instance
@@ -24,15 +22,15 @@ public class TrainStopDataInstance {
 	
 	private TrainStopDataInstance() {
 		this.allStops = TrainStopDataParser.parse();
-		this.redLineStops = getStopsForLine(TrainLine.RED_LINE);
-		this.blueLineStops = getStopsForLine(TrainLine.BLUE_LINE);
-		this.greenLineStops = getStopsForLine(TrainLine.GREEN_LINE);
-		this.brownLineStops = getStopsForLine(TrainLine.BROWN_LINE);
-		this.purpleLineStops = getStopsForLine(TrainLine.PURPLE_LINE);
-		this.purpleExpressLineStops = getStopsForLine(TrainLine.PURPLE_EXPRESS_LINE);
-		this.yellowLineStops = getStopsForLine(TrainLine.YELLOW_LINE);
-		this.pinkLineStops = getStopsForLine(TrainLine.PINK_LINE);
-		this.orangeLineStops = getStopsForLine(TrainLine.ORANGE_LINE);
+		this.redLineStops = getStopsForRoute(TrainRoute.RED_LINE);
+		this.blueLineStops = getStopsForRoute(TrainRoute.BLUE_LINE);
+		this.greenLineStops = getStopsForRoute(TrainRoute.GREEN_LINE);
+		this.brownLineStops = getStopsForRoute(TrainRoute.BROWN_LINE);
+		this.purpleLineStops = getStopsForRoute(TrainRoute.PURPLE_LINE);
+		this.purpleExpressLineStops = getStopsForRoute(TrainRoute.PURPLE_EXPRESS_LINE);
+		this.yellowLineStops = getStopsForRoute(TrainRoute.YELLOW_LINE);
+		this.pinkLineStops = getStopsForRoute(TrainRoute.PINK_LINE);
+		this.orangeLineStops = getStopsForRoute(TrainRoute.ORANGE_LINE);
 	}
 
 	public static TrainStopDataInstance getInstance() {
@@ -79,7 +77,7 @@ public class TrainStopDataInstance {
 		return orangeLineStops;
 	}
 	
-	private ArrayList<TrainStop> getStopsForLine(TrainLine tl) {
+	private ArrayList<TrainStop> getStopsForRoute(TrainRoute tl) {
 		ArrayList<TrainStop> specifiedStops = new ArrayList<TrainStop>();
 		for (TrainStop stop: allStops) {
 			if (stop.trainLines.contains(tl)) specifiedStops.add(stop);

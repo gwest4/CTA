@@ -1,4 +1,4 @@
-package utils;
+package cta.api;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,8 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import utils.TrainStop.Direction;
-import utils.TrainStop.TrainLine;
+import cta.api.enums.Direction;
+import cta.api.enums.TrainRoute;
 
 
 public class TrainStopDataParser {
@@ -32,7 +32,7 @@ public class TrainStopDataParser {
 				
 				String stopId = csvRow[0];
 				
-				Direction dir = Direction.NONE;
+				Direction dir = null;
 				switch (csvRow[1]) {
 					case "N": 	dir = Direction.NORTH; 	break;
 					case "S": 	dir = Direction.SOUTH; 	break;
@@ -51,16 +51,16 @@ public class TrainStopDataParser {
 				
 				boolean handicapAccessable = csvRow[6].equalsIgnoreCase("true") ? true : false;
 				
-				ArrayList<TrainLine> trainLines = new ArrayList<TrainLine>();
-				if (csvRow[7].equalsIgnoreCase("true")) { trainLines.add(TrainLine.RED_LINE); }
-				if (csvRow[8].equalsIgnoreCase("true")) { trainLines.add(TrainLine.BLUE_LINE); }
-				if (csvRow[9].equalsIgnoreCase("true")) { trainLines.add(TrainLine.GREEN_LINE); }
-				if (csvRow[10].equalsIgnoreCase("true")) { trainLines.add(TrainLine.BROWN_LINE); }
-				if (csvRow[11].equalsIgnoreCase("true")) { trainLines.add(TrainLine.PURPLE_LINE); }
-				if (csvRow[12].equalsIgnoreCase("true")) { trainLines.add(TrainLine.PURPLE_EXPRESS_LINE); }
-				if (csvRow[13].equalsIgnoreCase("true")) { trainLines.add(TrainLine.YELLOW_LINE); }
-				if (csvRow[14].equalsIgnoreCase("true")) { trainLines.add(TrainLine.PINK_LINE); }
-				if (csvRow[15].equalsIgnoreCase("true")) { trainLines.add(TrainLine.ORANGE_LINE); }
+				ArrayList<TrainRoute> trainLines = new ArrayList<TrainRoute>();
+				if (csvRow[7].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.RED_LINE); }
+				if (csvRow[8].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.BLUE_LINE); }
+				if (csvRow[9].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.GREEN_LINE); }
+				if (csvRow[10].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.BROWN_LINE); }
+				if (csvRow[11].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.PURPLE_LINE); }
+				if (csvRow[12].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.PURPLE_EXPRESS_LINE); }
+				if (csvRow[13].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.YELLOW_LINE); }
+				if (csvRow[14].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.PINK_LINE); }
+				if (csvRow[15].equalsIgnoreCase("true")) { trainLines.add(TrainRoute.ORANGE_LINE); }
 				
 				String[] loc = csvRow[16].substring(2, csvRow[16].length()-2).split(",");
 				Location location = new Location(Double.valueOf(loc[0]), Double.valueOf(loc[1]));

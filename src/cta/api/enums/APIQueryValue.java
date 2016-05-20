@@ -1,4 +1,4 @@
-package cta.api;
+package cta.api.enums;
 
 public enum APIQueryValue {
 	STOP_ID			(),

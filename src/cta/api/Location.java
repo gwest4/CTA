@@ -1,4 +1,4 @@
-package utils;
+package cta.api;
 
 public class Location {
 	public final double latitude;

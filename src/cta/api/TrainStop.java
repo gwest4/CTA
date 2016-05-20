@@ -1,6 +1,9 @@
-package utils;
+package cta.api;
 
 import java.util.ArrayList;
+
+import cta.api.enums.Direction;
+import cta.api.enums.TrainRoute;
 
 public class TrainStop {
 	public final String stopId;
@@ -10,11 +13,11 @@ public class TrainStop {
 	public final String stationDescriptiveName;
 	public final String stationId;
 	public final boolean handicapAccessable;
-	public final ArrayList<TrainLine> trainLines;
+	public final ArrayList<TrainRoute> trainLines;
 	public final Location location;
 
 	TrainStop (String stopId, Direction dir, String stopName, String stationName, String stationDescriptiveName,
-			String stationId, boolean handicapAccessable, ArrayList<TrainLine> trainLines, Location location) {
+			String stationId, boolean handicapAccessable, ArrayList<TrainRoute> trainLines, Location location) {
 		this.stopId = stopId;
 		this.dir = dir;
 		this.stopName = stopName;
@@ -37,26 +40,6 @@ public class TrainStop {
 				"\thandicapAccessable: "+this.handicapAccessable+"\n"+
 				"\ttrainLines: "+this.trainLines+"\n"+
 				"\tlocation: "+this.location;
-	}
-	
-	public enum Direction {
-		NORTH,
-		SOUTH,
-		EAST,
-		WEST,
-		NONE;
-	}
-
-	public enum TrainLine {
-		RED_LINE,
-		BLUE_LINE,
-		GREEN_LINE,
-		BROWN_LINE,
-		PURPLE_LINE,
-		PURPLE_EXPRESS_LINE,
-		YELLOW_LINE,
-		PINK_LINE,
-		ORANGE_LINE;
 	}
 
 }
