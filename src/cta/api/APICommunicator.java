@@ -3,11 +3,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map.Entry;
-
-import javax.xml.parsers.*;
-import org.w3c.dom.*;
 
 public class APICommunicator {
 	private final static String ARRIVALS_BASE_URL = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx";

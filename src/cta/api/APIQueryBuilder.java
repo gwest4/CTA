@@ -2,11 +2,9 @@ package cta.api;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
-import cta.api.enums.APIQueryParameter;
 
 public class APIQueryBuilder {
 	private final HashMap<String,String> queryParams;
-	private String query;
 	/**
 	 * URL Parameters to be used with the CTA Arrivals API
 	 * 
@@ -20,7 +18,6 @@ public class APIQueryBuilder {
 	public APIQueryBuilder(String apiKey) {
 		this.queryParams = new HashMap<String,String>();
 		this.queryParams.put("key", apiKey);
-		this.query = "";
 	}
 	
 	public void addParameter(APIQueryParameter p, String v) {

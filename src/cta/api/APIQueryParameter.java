@@ -1,4 +1,4 @@
-package cta.api.enums;
+package cta.api;
 
 public enum APIQueryParameter {
 	STOP_ID			("stpid"),

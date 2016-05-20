@@ -1,8 +1,8 @@
 package main;
 
-import cta.api.enums.APIQueryParameter;
 import cta.api.APICommunicator;
 import cta.api.APIQueryBuilder;
+import cta.api.APIQueryParameter;
 
 public class Main {
 
