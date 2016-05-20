@@ -23,8 +23,8 @@ public class TrainStopDataParser {
 		String csvLine = "";
 
 		try {
-			System.out.println("Parsing \'"+TrainStopDataManager.DATA_PATH+"\""); 
-			br = new BufferedReader(new FileReader(TrainStopDataManager.DATA_PATH));
+			System.out.println("Parsing \'"+TrainStopDataManager.FILE_PATH+"\""); 
+			br = new BufferedReader(new FileReader(TrainStopDataManager.FILE_PATH));
 			br.readLine(); // skip header line
 			
 			while ((csvLine = br.readLine()) != null) {
