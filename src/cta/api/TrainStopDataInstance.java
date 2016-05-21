@@ -1,5 +1,6 @@
 package cta.api;
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 import cta.api.enums.TrainRoute;
 
@@ -75,6 +76,15 @@ public class TrainStopDataInstance {
 
 	public ArrayList<TrainStop> getOrangeLineStops() {
 		return orangeLineStops;
+	}
+	
+	public ArrayList<TrainStop> getStopsWithPredicate(Predicate<TrainStop> test) {
+		ArrayList<TrainStop> result = new ArrayList<TrainStop>();
+		for (TrainStop s : allStops) {
+			if (test.test(s)) { result.add(s); }
+		}
+		return result;
+		
 	}
 	
 	private ArrayList<TrainStop> getStopsForRoute(TrainRoute tl) {
