@@ -87,12 +87,4 @@ public class TrainStopDataInstance {
 		
 	}
 	
-	private ArrayList<TrainStop> getStopsForRoute(TrainRoute tl) {
-		ArrayList<TrainStop> specifiedStops = new ArrayList<TrainStop>();
-		for (TrainStop stop: allStops) {
-			if (stop.trainLines.contains(tl)) specifiedStops.add(stop);
-		}
-		return specifiedStops;
-	}
-	
 }
