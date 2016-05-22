@@ -1,4 +1,4 @@
-package cta.api.enums;
+package cta.api;
 
 public enum TrainRoute {
 	RED_LINE,

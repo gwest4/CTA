@@ -2,9 +2,6 @@ package cta.api;
 
 import java.util.ArrayList;
 
-import cta.api.enums.Direction;
-import cta.api.enums.TrainRoute;
-
 public class TrainStop {
 	public final String stopId;
 	public final Direction dir;

@@ -2,12 +2,10 @@ package cta.api;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import cta.api.enums.Direction;
-import cta.api.enums.TrainRoute;
+import cta.utils.CTADataClient;
 
 
 public class TrainStopDataParser {
@@ -23,8 +21,8 @@ public class TrainStopDataParser {
 		String csvLine = "";
 
 		try {
-			System.out.println("Parsing \'"+TrainStopDataManager.FILE_PATH+"\""); 
-			br = new BufferedReader(new FileReader(TrainStopDataManager.FILE_PATH));
+			br = CTADataClient.getTrainStopDataFile();
+			
 			br.readLine(); // skip header line
 			
 			while ((csvLine = br.readLine()) != null) {
