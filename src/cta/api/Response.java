@@ -1,5 +1,5 @@
 package cta.api;
 
-public abstract class Response {
-
+public interface Response {
+	
 }

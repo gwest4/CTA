@@ -9,6 +9,7 @@ import java.io.FileReader;
 
 public class DataClient {
 	
+	public static final String API_CALL_LP = "data/api_response.xml";
 	public static final String TRAIN_STOP_LP = "data/cta_train_stops.csv";
 	private static final String TRAIN_STOP_URL = "https://data.cityofchicago.org/api/views/8pix-ypme/rows.csv?accessType=DOWNLOAD";
 	
