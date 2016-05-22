@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import cta.utils.CTADataClient;
 
 
 public class TrainStopDataParser {
@@ -21,7 +20,7 @@ public class TrainStopDataParser {
 		String csvLine = "";
 
 		try {
-			br = CTADataClient.getTrainStopDataFile();
+			//br = CTADataClient.getTrainStopDataFile();
 			
 			br.readLine(); // skip header line
 			
