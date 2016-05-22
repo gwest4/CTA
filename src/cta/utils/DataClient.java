@@ -7,15 +7,12 @@ import java.nio.channels.ReadableByteChannel;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-import cta.api.APIQueryBuilder;
-
-public class CTADataClient {
+public class DataClient {
 	
-	public static final String API_CALL_LP = "data/xml/api_response.xml";
 	public static final String TRAIN_STOP_LP = "data/cta_train_stops.csv";
 	private static final String TRAIN_STOP_URL = "https://data.cityofchicago.org/api/views/8pix-ypme/rows.csv?accessType=DOWNLOAD";
 	
-	public static BufferedReader getTrainStopDataFile() {
+	public static BufferedReader trainStopDataReader() {
 		try {
 			URL url = new URL(TRAIN_STOP_URL);
 			
@@ -28,10 +25,8 @@ public class CTADataClient {
 		return null;
 	}
 	
-	public static BufferedReader sendAPIQuery(APIQueryBuilder b) {
-		try {
-			URL url = new URL(b.api.baseURL + b.toQueryString());
-			
+	public static BufferedReader sendAPIQuery(URL url) {
+		try {			
 			return getFileFromURL(url, API_CALL_LP);
 
 		} catch (Exception e) {
@@ -63,6 +58,6 @@ public class CTADataClient {
 	}
 	
 	public static void main(String[] args) {
-		CTADataClient.getTrainStopDataFile();
+		DataClient.trainStopDataReader();
 	}
 }
