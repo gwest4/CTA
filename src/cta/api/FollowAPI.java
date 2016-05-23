@@ -1,7 +1,7 @@
 package cta.api;
 
-public class ArrivalsAPI implements API {
-	private static final String BASE_URL = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx";
+public class FollowAPI implements API {
+	private static final String BASE_URL = "lapi.transitchicago.com/api/1.0/ttfollow.aspx";
 
 	@Override
 	public Response sendRequest(Request q) {
@@ -12,14 +12,11 @@ public class ArrivalsAPI implements API {
 	@Override
 	public Request createRequest() {
 		return new Request(API_KEY, BASE_URL);
-		
+
 	}
 	
 	public enum Param {
-		STATION_ID ("mapid"),
-		STOP_ID ("stpid"),
-		MAX_RESULTS ("max"),
-		ROUTE ("rt");
+		RUN_NUMBER ("runnumber");
 		
 		private final String name; // parameter name to be used in request URL
 	    Param(String name) {

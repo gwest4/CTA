@@ -2,16 +2,28 @@ package main;
 
 import java.io.BufferedReader;
 
-import cta.api.APIQueryBuilder;
-import cta.api.APIQueryBuilder.*;
-import cta.utils.CTADataClient;
+import cta.api.Request;
+import cta.api.Response;
+import cta.api.ArrivalsAPI;
+import cta.api.LocationsAPI;
 
 public class Main {
 	
 	public static void main(String[] args) {
-		APIQueryBuilder b = new APIQueryBuilder(API.ARRIVALS);
-		b.addParameter(QueryVariable.STOP_ID, "30117");
-		BufferedReader responseReader = CTADataClient.sendAPIQuery(b);
+		LocationsAPI locations = new LocationsAPI();
+		Request req1 = locations.createRequest();
+		Response res1 = locations.sendRequest(req1);
+		
+		/* Example usage
+		
+		Trains trains = res1.getTrains();
+		
+		*/
+		
+		
+		ArrivalsAPI arrivals = new ArrivalsAPI();
+		Request req2 = arrivals.createRequest();
+		Response res2 = arrivals.sendRequest(req2);
 	}
 
 }
