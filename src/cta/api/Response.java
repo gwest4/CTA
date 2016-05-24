@@ -1,5 +1,13 @@
 package cta.api;
 
-public interface Response {
+import java.sql.Date;
+
+public abstract class Response {
+	
+	public Integer error;
+	
+	public String errorMessage;
+	
+	public Date timestamp;
 	
 }

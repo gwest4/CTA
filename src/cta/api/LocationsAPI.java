@@ -23,4 +23,8 @@ public class LocationsAPI implements API {
 	    	this.name = name;
 	    }
 	}
+	
+	public class LocationsResponse extends Response {
+		
+	}
 }
